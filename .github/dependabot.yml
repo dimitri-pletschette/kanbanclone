@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"  # or "pip", "maven", etc.
+    directory: "/" 
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    versioning-strategy: "auto"
+    pull-request-branch-name:
+      separator: "-"
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+    allow:
+      - dependency-type: "direct"
+    ignore:
+      - dependency-name: "express"
+        versions: ["4.x"]
